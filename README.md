@@ -8,7 +8,7 @@ Go to [alonso.io](http://alonso.io), and press _ctrl+g_ to toggle the grid on an
 
 ## Features
 
-🔥  **Hotkeys** - toggle on/off with ctrl+G, just like in Sketch
+🔥 **Hotkeys** - toggle on/off with ctrl+G, just like in Sketch
 
 💾 **Persistent** - remembers state across page reloads
 
@@ -32,11 +32,13 @@ I design in Sketch, and I use grids pretty heavily. When I start implementing th
 ## Example
 
 ```jsx
+import Grid from './lib';
+
 <div style={{ position: 'relative' }}>
   <Grid />
   <h1>Control + G to toggle grid</h1>
-  <p>The grid will fill the whole parent's span</p>
-</div>
+  <p>The grid will fill the whole div</p>
+</div>;
 ```
 
 ## Help wanted
