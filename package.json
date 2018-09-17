@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holmesal/react-sketch-grid"
+  },
   "files": [
     "dist"
   ],
