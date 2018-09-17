@@ -1,0 +1,7 @@
+{
+  "flow.useNPMPackagedFlow": true,
+  "javascript.validate.enable": false,
+  "files.associations": {
+    "*.js": "javascriptreact"
+  }
+}
