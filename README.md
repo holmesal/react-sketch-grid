@@ -14,7 +14,7 @@ Go to [alonso.io](http://alonso.io), and press _ctrl+g_ to toggle the grid on an
 
 💾 **Persistent** - remembers state across page reloads
 
-👩‍🎨 **Customizable** - control grid size, line thickness, color, and more
+👩‍🎨 **Customizable** - control grid size, color, and more
 
 🧘‍♀️ **Flexible** - can be used for whole-page grids, or inside single components
 
@@ -31,6 +31,24 @@ I design in Sketch, and I use grids pretty heavily. When I start implementing th
 1. Add the `<Grid />` component.
 2. Add `position: relative` to any parent element you want the grid to “fill”
 
+Here are the available props:
+
+```js
+type Props = {
+  // Width, in pixels, of each small grid line
+  blockSize: number,
+
+  // Show thikk lines every N thin lines
+  thickLinesEvery: number,
+
+  // Color of the thin lines
+  lightColor: string,
+
+  // Color of the thick lines
+  darkColor: string
+};
+```
+
 ## Example
 
 ```jsx
@@ -43,8 +61,10 @@ import Grid from 'react-sketch-grid';
 </div>;
 ```
 
-## Help wanted
+## TODO list / help wanted
 
 - react-native compatibility (`<div />` —> `<View />`)
 - remove need for `position: relative` on parent element?
 - counting blocks is no fun - find a better way?
+- make hotkey customizable
+- add prop for line thickness?

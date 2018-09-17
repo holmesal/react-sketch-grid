@@ -5,9 +5,16 @@ import range from 'lodash.range';
 import Measure from 'react-measure';
 
 type Props = {
+  // Width, in pixels, of each small grid line
   blockSize: number,
+
+  // Show thikk lines every N thin lines
   thickLinesEvery: number,
+
+  // Color of the thin lines
   lightColor?: string,
+
+  // Color of the thick lines
   darkColor?: string
 };
 
