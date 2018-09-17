@@ -11,6 +11,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "react-sketch-grid",
+    "react sketch grid",
+    "sketch grid",
+    "sketch",
+    "grid",
+    "react sketch"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build-examples": "react-scripts build",
