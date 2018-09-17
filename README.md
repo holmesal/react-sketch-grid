@@ -1,6 +1,8 @@
 # react-sketch-grid
 
-A React port of Sketch's grid overlay
+A React port of Sketch's grid overlay.
+
+![Demo](/demo.gif)
 
 ## Live Demo
 
@@ -32,7 +34,7 @@ I design in Sketch, and I use grids pretty heavily. When I start implementing th
 ## Example
 
 ```jsx
-import Grid from './lib';
+import Grid from 'react-sketch-grid';
 
 <div style={{ position: 'relative' }}>
   <Grid />
