@@ -1,4 +1,26 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+require('./Grid.css');
+
+var _lodash = require('lodash.range');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _reactMeasure = require('react-measure');
+
+var _reactMeasure2 = _interopRequireDefault(_reactMeasure);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6,15 +28,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import React, { Component } from 'react';
-import './Grid.css';
-import range from 'lodash.range';
-import Measure from 'react-measure';
-
 /*:: type Props = {
+  // Width, in pixels, of each small grid line
   blockSize: number,
+
+  // Show thikk lines every N thin lines
   thickLinesEvery: number,
+
+  // Color of the thin lines
   lightColor?: string,
+
+  // Color of the thick lines
   darkColor?: string
 };*/
 /*:: type State = {
@@ -79,7 +103,7 @@ var Grid = function (_Component) {
         bottom: 0,
         width: 1
       });
-      return React.createElement('div', { key: key, style: style, className: 'GridLine' });
+      return _react2.default.createElement('div', { key: key, style: style, className: 'GridLine' });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -111,11 +135,11 @@ var Grid = function (_Component) {
       var blockSize = this.props.blockSize;
 
 
-      if (!visible) return React.createElement('div', null);
+      if (!visible) return _react2.default.createElement('div', null);
       var numHorizontal = Math.floor(dimensions.height / blockSize);
       var numVertical = Math.floor(dimensions.width / blockSize);
-      return React.createElement(
-        Measure,
+      return _react2.default.createElement(
+        _reactMeasure2.default,
         {
           bounds: true,
           onResize: function onResize(contentRect) {
@@ -124,13 +148,13 @@ var Grid = function (_Component) {
         },
         function (_ref3) {
           var measureRef = _ref3.measureRef;
-          return React.createElement(
+          return _react2.default.createElement(
             'div',
             { ref: measureRef, className: 'Grid' },
-            range(1, numHorizontal + 1).map(function (idx) {
+            (0, _lodash2.default)(1, numHorizontal + 1).map(function (idx) {
               return _this2.renderLine('horizontal', idx);
             }),
-            range(0, numVertical + 1).map(function (idx) {
+            (0, _lodash2.default)(0, numVertical + 1).map(function (idx) {
               return _this2.renderLine('vertical', idx);
             })
           );
@@ -140,7 +164,7 @@ var Grid = function (_Component) {
   }]);
 
   return Grid;
-}(Component);
+}(_react.Component);
 
 Grid.defaultProps = {
   blockSize: 12,
@@ -148,6 +172,4 @@ Grid.defaultProps = {
   lightColor: 'rgba(255, 0, 0, 0.2)',
   darkColor: 'rgba(0, 0, 255, 0.2)'
 };
-
-
-export default Grid;
+exports.default = Grid;

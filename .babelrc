@@ -1,4 +1,4 @@
 {
-  "presets": ["react-app"],
-  "plugins": ["babel-plugin-transform-flow-comments"]
+  "presets": ["react-app", "es2015"],
+  "plugins": ["babel-plugin-transform-flow-comments", "babel-plugin-transform-class-properties"]
 }
