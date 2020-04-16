@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import './Grid.css';
+import './Grid.module.css';
 import range from 'lodash.range';
 import Measure from 'react-measure';
 
